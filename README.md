@@ -1,0 +1,2 @@
+# ncqx.back
+CMS - Strapi

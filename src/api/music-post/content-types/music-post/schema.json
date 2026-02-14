@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "music_posts",
+  "info": {
+    "singularName": "music-post",
+    "pluralName": "music-posts",
+    "displayName": "Music Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "album": {
+      "type": "string"
+    },
+    "release_date": {
+      "type": "date",
+      "required": true
+    },
+    "isAlbum": {
+      "type": "boolean",
+      "required": false,
+      "default": false
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "music_posts"
+    },
+    "src": {
+      "type": "string",
+      "required": true
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "uid": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

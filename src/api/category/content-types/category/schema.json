@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "blog_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-post.blog-post",
+      "inversedBy": "categories"
+    },
+    "music_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::music-post.music-post",
+      "inversedBy": "categories"
+    },
+    "photo_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::photo-post.photo-post",
+      "inversedBy": "categories"
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "blog",
+        "music",
+        "photo"
+      ]
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photo_posts",
+  "info": {
+    "singularName": "photo-post",
+    "pluralName": "photo-posts",
+    "displayName": "Photo Post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "aspect_ratio": {
+      "type": "enumeration",
+      "required": true,
+      "default": "horizontal",
+      "enum": [
+        "vertical",
+        "horizontal"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "photo_posts"
+    },
+    "aperture": {
+      "type": "string"
+    },
+    "focal_length": {
+      "type": "string"
+    },
+    "iso": {
+      "type": "string"
+    },
+    "shutter_speed": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "uid": {
+      "type": "uid"
+    }
+  }
+}

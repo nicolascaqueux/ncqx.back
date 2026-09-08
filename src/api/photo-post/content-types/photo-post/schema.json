@@ -11,21 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "thumbnail": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "photo": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",

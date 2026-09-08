@@ -49,8 +49,7 @@ This is used to render music listings or track/album entries.
 
 The `photo-post` collection includes:
 
-- `thumbnail` (required media)
-- `photo` (required media)
+- `photo` (media, required)
 - `aspect_ratio` (enum: `vertical` or `horizontal`)
 - `aperture`
 - `focal_length`
@@ -60,7 +59,10 @@ The `photo-post` collection includes:
 - `categories` (many-to-many relation)
 - `uid` (unique route identifier)
 
-This supports gallery layouts, image metadata, and media browsing.
+The gallery uses Strapi's generated image formats from `photo`: `thumbnail` for
+the grid and `large` (falling back to the original) for the modal. This supports
+gallery layouts, image metadata, and media browsing without duplicating media
+relations.
 
 ## Relationships and taxonomy
 

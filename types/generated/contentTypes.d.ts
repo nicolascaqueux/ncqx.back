@@ -524,14 +524,9 @@ export interface ApiPhotoPostPhotoPost extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     location: Schema.Attribute.String;
-    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
-      Schema.Attribute.Required;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     shutter_speed: Schema.Attribute.String;
-    thumbnail: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios'
-    > &
-      Schema.Attribute.Required;
     uid: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
